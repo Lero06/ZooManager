@@ -4,7 +4,6 @@
  */
 package animals;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 /**
  *
  * @author llean
@@ -14,7 +13,7 @@ public class animal_register {
     private String id;
     private String nombre;
     private String specie;
-    private LocalDateTime dateBirth;
+    private LocalDate dateBirth;
     private animal_zone zone;
     //getters
 
@@ -30,7 +29,7 @@ public class animal_register {
         return specie;
     }
 
-    public LocalDateTime getDateBirth() {
+    public LocalDate getDateBirth() {
         return dateBirth;
     }
     //validations
@@ -38,20 +37,15 @@ public class animal_register {
         String regex = "^[A-Z]-\\d{4}$";
         return id.matches(regex);
     }
-    private static boolean verifyDateBirth(LocalDateTime dateBirth) {
-        return dateBirth.isBefore(LocalDateTime.now());
+    private static boolean verifyDateBirth(LocalDate dateBirth) {
+        return dateBirth.isBefore(LocalDate.now());
     }
     //setters
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setZone(animal_zone zone) {
         this.zone = zone;
     }
 
-    public animal_register(String id, String nombre, String specie, LocalDateTime datebirth) {
+    public animal_register(String id, String nombre, String specie, LocalDate datebirth) {
        if(verifyId(id)) {
            this.id = id;
        }
