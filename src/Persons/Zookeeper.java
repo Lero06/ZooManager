@@ -9,7 +9,7 @@ import java.time.LocalDate;
  *
  * @author llean
  */
-public class Zookeeper extends employee {
+public class zookeeper extends employee {
     private String speciality;
     private String[] log = new String[200];
 
@@ -42,7 +42,7 @@ public class Zookeeper extends employee {
         return animal.getName() + " is healthy";
     }
     
-    public Zookeeper( String ID, String name, LocalDate birthDate, String phone, int salary,String speciality) {
+    public zookeeper( String ID, String name, LocalDate birthDate, String phone, int salary,String speciality) {
         super(ID, name, birthDate, phone, salary);
         this.speciality = speciality;
     }
