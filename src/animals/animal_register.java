@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class animal_register {
     //attributes
     private String id;
-    private String nombre;
+    private String name;
     private String specie;
     private LocalDate dateBirth;
     private animal_zone zone;
@@ -21,8 +21,8 @@ public class animal_register {
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
     public String getSpecie() {
@@ -49,7 +49,7 @@ public class animal_register {
        if(verifyId(id)) {
            this.id = id;
        }
-        this.nombre = nombre;
+        this.name = nombre;
         this.specie = specie;
         if(verifyDateBirth(dateBirth)) {
              this.dateBirth = datebirth;
@@ -59,7 +59,7 @@ public class animal_register {
 
     @Override
     public String toString() {
-        return "animal_register:" + "id=" + id + ", nombre=" + nombre + ", specie=" + specie + ", datebirth=" + dateBirth + ", zone=";
+        return "animal_register:" + "id=" + id + ", nombre=" + name + ", specie=" + specie + ", datebirth=" + dateBirth + ", zone=";
     }
     
     
