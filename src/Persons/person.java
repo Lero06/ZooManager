@@ -10,7 +10,7 @@ import Utils.UtilDate;
  *
  * @author llean
  */
-public class person {
+public abstract class person {
     private String ID;
     private String name;
     private LocalDate birthDate;

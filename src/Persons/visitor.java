@@ -11,6 +11,7 @@ import java.time.LocalDate;
  * @author llean
  */
 public class visitor extends person {
+    private String[] log = new String[200];
 
     public visitor(String ID, String name, LocalDate birthDate, String phone) {
         super(ID, name, birthDate, phone);
@@ -20,4 +21,13 @@ public class visitor extends person {
         super(ID, name, birthDate);
     }
     
+        public void visitorLog() {
+            int max = log.length;
+            for (int i = 0; i < max; i++) {
+                 if(log[i]==null || log[i].isBlank()){
+                     log[i] = super.getID() +"/"+ LocalDate.now();
+                 }
+            }
+        }
+        
 }
