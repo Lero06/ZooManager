@@ -4,7 +4,7 @@
  */
 package Persons;
 import java.time.LocalDate;
-import java.time.Period;
+import Utils.UtilDate;
 
 /**
  *
@@ -36,24 +36,25 @@ public class person {
         this.phone = phone;
     }
 
+     public int age (LocalDate birthdate) {
+         return UtilDate.getAge(birthdate);
+     }
 
-    
     private static boolean verifyPhone(String phone) {
         String regex = "^\\d{2}-\\d{2}-\\d{2}-\\d{2}$";
         return phone.matches(regex);
     }
     
-    public boolean verifyLegalAge(LocalDate birthdate) {
-    Period edad = Period.between(birthdate,LocalDate.now());
-    return edad.getYears() >= 18;
-    }
-
     public person(String ID, String name, LocalDate birthDate, String phone) {
         this.ID = ID;
         this.name = name;
+        if(UtilDate.verifyDateBirth(birthDate))
         this.birthDate = birthDate;
-        this.phone = phone;
+        if(verifyPhone(phone)) {
+                 this.phone = phone;
+        }
     }
+    
     public person(String ID, String name, LocalDate birthDate) {
         this.ID = ID;
         this.name = name;

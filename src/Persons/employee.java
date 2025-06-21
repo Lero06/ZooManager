@@ -4,6 +4,7 @@
  */
 package Persons;
 import java.time.LocalDate;
+import Utils.UtilDate;
 /**
  *
  * @author llean
@@ -19,10 +20,14 @@ public abstract class employee extends person {
        public void setSalary(int salary) {
         this.salary = salary;
     }
+       
     
     //constructor
     public employee( String ID, String name, LocalDate birthDate, String phone,int salary) {
-        super(ID, name, birthDate, phone);
+        if (!UtilDate.verifyLegalAge(birthDate)) {
+            throw new IllegalArgumentException("Employee must be at least 18 years old");
+        }
+        super(ID, name,birthDate, phone);
         if(salary>=300000){
         this.salary = salary;
       }
