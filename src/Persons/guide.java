@@ -6,17 +6,24 @@ package Persons;
 
 import java.time.LocalDate;
 import animals.animal_register;
+import Tours.Tour;
 /**
  *
  * @author llean
  */
 public class guide extends employee{
     private String[] languages = new String[20];
-    private String[] log = new String[200];
+    private Tour[] log = new Tour[200];
 
     public String[] getLanguagues() {
         return languages;
     }
+
+    public Tour[] getLog() {
+        return log;
+    }
+    
+    
 public boolean addLangages(String idioma){
           int max = languages.length;
           for (int i = 1; i < max ; i++) {
@@ -32,12 +39,15 @@ public String tour() {
    return "Se realizo el tour";
 }
 
-public void tourlog() {
-         int max = log.length;
-        for (int i = 0; i < max; i++) {
-            if(log[i]==null || log[i].isBlank()){
-                this.log[i] = tour()+"["+i+"]";
+public void tourlog(Tour tour) {
+     int j = -1;
+        for (int i = 0; i < log.length; i++) {
+            if (log[i] == null) {
+                j = i;
             }
+        }
+        if ( j >= 0) {
+            this.log[j] = tour;
         }
     }
 

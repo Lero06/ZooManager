@@ -13,6 +13,11 @@ import java.time.LocalDate;
 public class visitor extends person {
     private String[] log = new String[200];
 
+    public String[] getLog() {
+        return log;
+    }
+    
+
     public visitor(String ID, String name, LocalDate birthDate, String phone) {
         super(ID, name, birthDate, phone);
     }

@@ -17,6 +17,12 @@ public class zookeeper extends employee {
         return speciality;
     }
 
+    public String[] getLog() {
+        return log;
+    }
+    
+    
+
     public int searchFree(String[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null || array[i].isBlank()) {

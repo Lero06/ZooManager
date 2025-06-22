@@ -16,6 +16,12 @@ public class Tour {
     private String[] log = new String[200];
     animal_register[] animals = new animal_register[10];
     visitor[] visitors = new visitor[10];
+
+    public animal_register[] getAnimals() {
+        return animals;
+    }
+    
+    
     
     public void animals(animal_register animal) {
         int max = animals.length;
